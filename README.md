@@ -1,53 +1,53 @@
-# Unit Test基础
+# Unit Test Comprehensive 
 
-## 练习描述
+## Business Requirement
 
-实现猜数字的游戏。游戏有四个格子，每个格子有一个0到9的数字，任意两个格子的数字都不一样。你有6次猜测的机会，如果猜对则获胜，否则失败。每次猜测时需依序输入4个数字，程序会根据猜测的情况给出xAxB的反馈，A前面的数字代表位置和数字都对的个数，B前面的数字代表数字对但是位置不对的个数。
+There is a game that realizes guessing numbers. There are four grids in the game, each with a number from 0 to 9, and the numbers for any two grids are different. You have 6 chances to guess. If you guess right, then you win; otherwise, you fail. Each time when you guess, you need to input 4 numbers in sequence. The program will give you feedback of xAxB according to the guessing situation. The number before A represents the number of correct position and number, and the number before B represents the number of correct number but wrong position.
 
-例如：答案是1 2 3 4， 那么对于不同的输入，有如下的输出
-
- 
+For example: the answer is 1 2 3 4, then there are the following outputs based on different inputs
 
 **Example**：
 
-> 答案是1 2 3 4， 那么对于不同的输入，有如下的输出
- 
+> The answer is 1 2 3 4, then there are the following outputs based on different inputs
+ 
 
 ```
-Input　　    Output             Instruction
-1 5 6 7      1A0B                 1 correct
-2 4 7 8      0A2B                 2 and 4 wrong position 
-0 3 2 4      1A2B                 4 correct，2 and 3 wrong position
-5 6 7 8      0A0B                 all wrong
-4 3 2 1      0A4B                 4 numbers position wrong
-1 2 3 4      4A0B                 win, all correct
-1 1 2 3    Wrong Input，Input again
-1 2        Wrong Input，Input again
+Input　　    Output             Instruction
+1 5 6 7      1A0B                 1 correct
+2 4 7 8      0A2B                 2 and 4 wrong position 
+0 3 2 4      1A2B                 4 correct，2 and 3 wrong position
+5 6 7 8      0A0B                 all wrong
+4 3 2 1      0A4B                 4 numbers position wrong
+1 2 3 4      4A0B                 win, all correct
+1 1 2 3    Wrong Input，Input again
+1 2        Wrong Input，Input again
 ```
- 
-答案在游戏开始时随机生成。输入只有6次机会，在每次猜测时，程序应给出当前猜测的结果，以及之前所有猜测的数字和结果以供玩家参考。输入界面为控制台（Console），以避免太多与问题无关的界面代码。
-输入时，用空格分隔数字。
+ 
+The answer is randomly generated at the beginning of the game. There are only 6 chances for input.  Each time when you guess, the program should give the results of the current guess, as well as all previously guessed numbers and results for the player's reference. The input interface is Console (console) to avoid too many interface codes that are not related to the problem.
+When inputting, separate the numbers with spaces.
 
-要求：
-- 设计和编写测试用例
-- 完成已有测试文件中的测试，并保证此测试文件所测类的测试覆盖率为100%
-- 单元测试应涵盖所有核心业务逻辑
-- 用小步骤进行单元测试重构
-- 为单元测试和方法命名有意义的名称
-- 代码通过小步骤提交并附上意义的评论
+## Practice Requirement:
+- ** Design and write test cases after clearly understanding the requirements**
+- ** Complete tests in the existing test file and ensure that the test coverage of the test category of this test file is 100%**
+- Unit testing should cover all core business logic
+- Make unit test refactoring with small steps
+- **Denominate meaningful names for unit tests and methods**
+- ** Submit code in small steps with a comment on meaning **
 
-## 环境要求
+#### Environment Requirement
 - Java 8
+- Intellj IDEA
 
-## 如何开始
+#### How to Start
 
-- 克隆模版库
-- 在项目中`src/main`目录下的运行`Main.java`文件
-  - 出现`Guess Number Game, You have 6 chances to guess!`，说明项目启动成功
-- 在项目中`src/test`目录下完成对应的单元测试
+- Clone repository: **https://github.com/tws-practice/guess-number-kata**
+- Run `Main.java` file under the `src/main` catalogue of project
+  - If `Guess Number Game, You have 6 chances to guess!` appears, then it means the project initialization is successful
+- Complete unit test on corresponding file under the `src/test` catalogue of project
 
-## 如何测试
-- 根目录下执行`./gradlew clean test`，查看测试结果
-
-## 输出规范
-- 完成需求的代码及测试
+#### How to Test
+- Implement `./gradlew clean test` under root catalogue and view test result
+ 
+## Practice Output && Submit
+- You should implement the test code and push your repo to github repo named **unit-test-comprehensive**.
+- Commit your repostory link to complete this Question.
