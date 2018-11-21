@@ -1,7 +1,7 @@
 package tw.commands;
 
 import tw.core.Answer;
-import tw.validator.InputValidator;
+import tw.core.validator.InputValidator;
 
 import java.io.BufferedReader;
 import java.io.IOException;

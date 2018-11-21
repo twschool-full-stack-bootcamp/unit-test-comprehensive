@@ -1,4 +1,4 @@
-package tw.core;
+package tw.core.generator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

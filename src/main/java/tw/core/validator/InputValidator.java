@@ -1,4 +1,4 @@
-package tw.validator;
+package tw.core.validator;
 
 import java.util.Arrays;
 import java.util.List;

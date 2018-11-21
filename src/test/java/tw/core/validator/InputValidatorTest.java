@@ -1,7 +1,6 @@
-package tw.core;
+package tw.core.validator;
 
 import org.junit.jupiter.api.Test;
-import tw.validator.InputValidator;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

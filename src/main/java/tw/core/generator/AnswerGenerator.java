@@ -3,7 +3,7 @@ package tw.core.generator;
 import com.google.inject.Inject;
 import tw.core.Answer;
 import tw.core.exception.AnswerFormatIncorrectException;
-import tw.validator.InputValidator;
+import tw.core.validator.InputValidator;
 
 /**
  * Created by jxzhong on 2017/5/17.
