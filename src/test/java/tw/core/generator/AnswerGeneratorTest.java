@@ -6,7 +6,7 @@ import tw.core.exception.AnswerFormatIncorrectException;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.hamcrest.core.IsNull.notNullValue;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.mock;
@@ -33,8 +33,7 @@ public class AnswerGeneratorTest {
         AnswerGenerator answerGenerator = new AnswerGenerator(randomIntGenerator);
 
         Answer answer = answerGenerator.generate();
-
-        assertThat(answer, notNullValue());
+        assertNotNull(answer);
         assertThat(answer.getIndexOfNum("4"), is(3));
     }
 }
