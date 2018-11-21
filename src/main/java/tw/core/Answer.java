@@ -27,16 +27,6 @@ public class Answer {
         return answer;
     }
 
-    public void validate() throws AnswerFormatIncorrectException {
-        long validatedNum = numList.stream()
-                .map(num -> parseInt(num))
-                .distinct()
-                .filter(num -> num < 10).count();
-        if (validatedNum < numList.size()) {
-            throw new AnswerFormatIncorrectException("Answer format is incorrect");
-        }
-    }
-
     public Record check(Answer inputAnswer) {
         Record record = new Record();
         this.numList.forEach(num -> {
