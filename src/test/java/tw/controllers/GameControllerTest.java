@@ -69,7 +69,7 @@ public class GameControllerTest {
     }
 
     @Test
-    public void should_display_end_result_when_game_failde() throws IOException, OutOfGuessCountException {
+    public void should_display_end_result_when_game_failed() throws IOException, OutOfGuessCountException {
         //given
         when(mockCommand.input()).thenReturn(errorAnswer);
         when(game.checkStatus()).thenReturn("");

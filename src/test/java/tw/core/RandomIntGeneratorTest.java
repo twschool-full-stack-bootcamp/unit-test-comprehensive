@@ -25,7 +25,8 @@ public class RandomIntGeneratorTest {
         //when
         String numStr = randomIntGenerator.generateNums(9, 4);
         //then
-        assertThat(numStr.length()).isEqualTo(7);
+        assertThat(numStr).hasSize(7);
+        assertThat(numStr.split("\\s").length).isEqualTo(4);
 
     }
 

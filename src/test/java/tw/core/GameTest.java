@@ -12,6 +12,7 @@ import tw.core.model.GuessResult;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -28,7 +29,7 @@ public class GameTest {
     }
 
     @Test
-    public void should_get_record_of_every_guess_result_when_call_guessHistory() throws OutOfGuessCountException {
+    public void should_get_record_of_every_guess_result_when_guess_twice_and_call_guessHistory() throws OutOfGuessCountException {
         //given
         game.guess(Answer.createAnswer("2 1 6 7"));
         game.guess(Answer.createAnswer("1 2 3 4"));
@@ -112,6 +113,16 @@ public class GameTest {
         boolean isContinue = game.checkCoutinue();
         //then
         assertThat(isContinue).isFalse();
+
+    }
+
+    @Test
+    public void should_throw_exception_when_can_not_contiune() throws Exception {
+        //given
+        excuteSuccessGuess();
+        //when
+        //then
+        assertThrows(OutOfGuessCountException.class, () -> game.guess(Answer.createAnswer("5 2 7 4")));
 
     }
 
