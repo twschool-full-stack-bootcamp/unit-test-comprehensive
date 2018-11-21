@@ -4,8 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tw.core.generator.RandomIntGenerator;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
@@ -26,7 +25,7 @@ public class RandomIntGeneratorTest {
         //when
         String numStr = randomIntGenerator.generateNums(9, 4);
         //then
-        assertThat(numStr.length(), is(7));
+        assertThat(numStr.length()).isEqualTo(7);
 
     }
 

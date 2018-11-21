@@ -11,8 +11,7 @@ import tw.core.model.GuessResult;
 
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -38,12 +37,12 @@ public class GameTest {
         List<GuessResult> guessResults = game.guessHistory();
 
         //then
-        assertThat(guessResults.size(), is(2));
-        assertThat(guessResults.get(0).getResult(), is("0A2B"));
-        assertThat(guessResults.get(0).getInputAnswer().toString(), is("2 1 6 7"));
+        assertThat(guessResults.size()).isEqualTo(2);
+        assertThat(guessResults.get(0).getResult()).isEqualTo("0A2B");
+        assertThat(guessResults.get(0).getInputAnswer().toString()).isEqualTo("2 1 6 7");
 
-        assertThat(guessResults.get(1).getResult(), is("4A0B"));
-        assertThat(guessResults.get(1).getInputAnswer().toString(), is("1 2 3 4"));
+        assertThat(guessResults.get(1).getResult()).isEqualTo("4A0B");
+        assertThat(guessResults.get(1).getInputAnswer().toString()).isEqualTo("1 2 3 4");
     }
 
     @Test
@@ -54,7 +53,7 @@ public class GameTest {
         //when
         String statusOfGame = game.checkStatus();
         //then
-        assertThat(statusOfGame, is("success"));
+        assertThat(statusOfGame).isEqualTo("success");
 
     }
 
@@ -67,7 +66,7 @@ public class GameTest {
         //when
         String statusOfGame = game.checkStatus();
         //then
-        assertThat(statusOfGame, is("fail"));
+        assertThat(statusOfGame).isEqualTo("fail");
 
     }
 
@@ -79,7 +78,7 @@ public class GameTest {
         //when
         String statusOfGame = game.checkStatus();
         //then
-        assertThat(statusOfGame, is("continue"));
+        assertThat(statusOfGame).isEqualTo("continue");
 
     }
 
@@ -90,7 +89,7 @@ public class GameTest {
         //when
         Boolean isContinue = game.checkCoutinue();
         //then
-        assertThat(isContinue, is(true));
+        assertThat(isContinue).isTrue();
 
     }
 
@@ -99,9 +98,9 @@ public class GameTest {
         //given
         excuteSixErrorGuess();
         //when
-        Boolean isContinue = game.checkCoutinue();
+        boolean isContinue = game.checkCoutinue();
         //then
-        assertThat(isContinue, is(false));
+        assertThat(isContinue).isFalse();
 
     }
 
@@ -110,9 +109,9 @@ public class GameTest {
         //given
         excuteSuccessGuess();
         //when
-        Boolean isContinue = game.checkCoutinue();
+        boolean isContinue = game.checkCoutinue();
         //then
-        assertThat(isContinue, is(false));
+        assertThat(isContinue).isFalse();
 
     }
 

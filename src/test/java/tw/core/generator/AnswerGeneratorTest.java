@@ -4,8 +4,7 @@ import org.junit.jupiter.api.Test;
 import tw.core.Answer;
 import tw.core.exception.AnswerFormatIncorrectException;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -33,7 +32,8 @@ public class AnswerGeneratorTest {
         AnswerGenerator answerGenerator = new AnswerGenerator(randomIntGenerator);
 
         Answer answer = answerGenerator.generate();
-        assertNotNull(answer);
-        assertThat(answer.getIndexOfNum("4"), is(3));
+        assertThat(answer).isNotNull();
+
+        assertThat(answer.getIndexOfNum("4")).isEqualTo(3);
     }
 }

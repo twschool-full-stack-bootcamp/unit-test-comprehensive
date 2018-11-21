@@ -3,8 +3,8 @@ package tw.core;
 import org.junit.jupiter.api.Test;
 import tw.validator.InputValidator;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 /**
  * Created by jxzhong on 2017/5/17.
@@ -18,7 +18,7 @@ public class InputValidatorTest {
         //whens
         Boolean isValidated = inputValidator.validate(num);
         //then
-        assertThat(isValidated, is(true));
+        assertThat(isValidated).isTrue();
     }
 
     @Test
@@ -29,7 +29,7 @@ public class InputValidatorTest {
         //whens
         Boolean isValidated = inputValidator.validate(num);
         //then
-        assertThat(isValidated, is(false));
+        assertThat(isValidated).isFalse();
     }
 
     @Test
@@ -40,7 +40,7 @@ public class InputValidatorTest {
         //whens
         Boolean isValidated = inputValidator.validate(num);
         //then
-        assertThat(isValidated, is(false));
+        assertThat(isValidated).isFalse();
     }
 
     @Test
@@ -51,6 +51,6 @@ public class InputValidatorTest {
         //whens
         Boolean isValidated = inputValidator.validate(num);
         //then
-        assertThat(isValidated, is(false));
+        assertThat(isValidated).isFalse();
     }
 }

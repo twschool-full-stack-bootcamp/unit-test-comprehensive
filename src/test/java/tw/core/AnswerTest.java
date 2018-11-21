@@ -4,8 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import tw.core.model.Record;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 /**
  * Created by jxzhong on 2017/9/23.
@@ -64,6 +64,6 @@ public class AnswerTest {
         Record result = actualAnswer.check(inputAnswer);
 
         //then
-        assertThat(result.getValue(), is(expectValue));
+        assertThat(result.getValue()).isEqualTo(expectValue);
     }
 }
