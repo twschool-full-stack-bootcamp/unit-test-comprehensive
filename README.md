@@ -40,7 +40,7 @@ When inputting, separate the numbers with spaces.
 
 #### How to Start
 
-- Clone repository: **https://github.com/tws-practice/guess-number-kata**
+- You can fork the following github repository as starting point
 - Run `Main.java` file under the `src/main` catalogue of project
   - If `Guess Number Game, You have 6 chances to guess!` appears, then it means the project initialization is successful
 - Complete unit test on corresponding file under the `src/test` catalogue of project
