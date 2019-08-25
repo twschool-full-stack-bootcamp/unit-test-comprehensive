@@ -8,7 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static java.time.Duration.ofMillis;
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -27,7 +26,7 @@ class LibraryTest {
     @DisplayName("someLibraryMethod should return 'true'")
     void testSomeLibraryMethod() {
         Library classUnderTest = new Library();
-        assertThat(classUnderTest.someLibraryMethod()).isTrue();
+        Assertions.assertTrue(classUnderTest.someLibraryMethod());
     }
 
     @Test
@@ -40,7 +39,7 @@ class LibraryTest {
         String value = "first";
         when(mockedList.get(0)).thenReturn(value);
 
-        assertThat(mockedList.get(0)).isEqualTo(value);
+        Assertions.assertEquals(value, mockedList.get(0));
     }
 
     @Test
@@ -74,7 +73,7 @@ class LibraryTest {
         Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
             throw new IllegalArgumentException("a message");
         });
-        assertThat(exception.getMessage()).isEqualTo("a message");
+        Assertions.assertEquals("a message", exception.getMessage());
     }
 
     @Test
